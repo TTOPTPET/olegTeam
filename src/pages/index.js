@@ -39,7 +39,6 @@ export default function Home() {
     {name: "Команда", active: third}  
   ]
 
-  
   return (
   <>
   <Tabs data={tabs} tabsClassName={tabsClassName}/>
