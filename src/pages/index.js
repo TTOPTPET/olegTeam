@@ -26,17 +26,19 @@ const competencies = [
 
 
 export default function Home() {
+  
+  const height = window.screen.height;
 
   const [tabsClassName, setTabsClassName] = useState("tabs")
 
   const [first, setFirst] = useState(false)
   const [second, setSecond] = useState(false)
   const [third, setThird] = useState(false)
-  
+
   let tabs = [
-    {name: "Проекты", active: first},
-    {name: "Компетенции", active: second},
-    {name: "Команда", active: third}  
+    {title: "Проекты", active: first, name: "projects"},
+    {title: "Компетенции", active: second, name: "competencies"},
+    {title: "Команда", active: third, name: "teams"}  
   ]
 
   return (
@@ -54,36 +56,36 @@ export default function Home() {
 
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={550}
-    offset={{top:350}}
+    minTopValue={height-200}
+    offset={{top:100}}
     onChange={(isVisible) => {
       isVisible ? setFirst(true) : setFirst(false)
     }}>
-      <CommonScreen title="/проекты">
+      <CommonScreen title="/проекты" name="projects">
         <CardList data={projects}/>
       </CommonScreen>
   </VisibilitySensor>
         
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={550}
-    offset={{top: 350}}
+    minTopValue={height-200}
+    offset={{top:100}}
     onChange={(isVisible) => {
       isVisible ? setSecond(true) : setSecond(false)
     }}>
-      <CommonScreen title="/компетенции">
+      <CommonScreen title="/компетенции" name="competencies">
           <CardList data={competencies}/>
       </CommonScreen>
   </VisibilitySensor>
         
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={550}
-    offset={{top: 350}}
+    minTopValue={height-200}
+    offset={{top:100}}
     onChange={(isVisible) => {
       isVisible ? setThird(true) : setThird(false)
     }}>
-      <CommonScreen title="/команда">
+      <CommonScreen title="/команда" name="teams">
       </CommonScreen>
   </VisibilitySensor>
 
