@@ -8,6 +8,8 @@ import FirstScreen from "../components/firstScreen/FirstScreen"
 import CommonScreen from "../components/commonScreen/CommonScreen"
 import Tabs from "../components/tabs/Tabs"
 import CardList from "../components/cardList/CardList"
+import FeedForm from "../components/feedForm/FeedForm"
+import autosize from "autosize"
 
 const projects = [
   {title: "Принтер", descr: "Краткое описание проекта", link: "Перейти на сайт сервиса >>>", adress: "https://www.youtube.com/"},
@@ -41,6 +43,8 @@ export default function Home() {
     {title: "Команда", active: third, name: "teams"}  
   ]
 
+  autosize(document.querySelector("textarea"))
+
   return (
   <>
   <Tabs data={tabs} tabsClassName={tabsClassName}/>
@@ -56,8 +60,8 @@ export default function Home() {
 
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={height-200}
-    offset={{top:100}}
+    minTopValue={height-250}
+    offset={{top:110}}
     onChange={(isVisible) => {
       isVisible ? setFirst(true) : setFirst(false)
     }}>
@@ -68,8 +72,8 @@ export default function Home() {
         
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={height-200}
-    offset={{top:100}}
+    minTopValue={height-250}
+    offset={{top:110}}
     onChange={(isVisible) => {
       isVisible ? setSecond(true) : setSecond(false)
     }}>
@@ -80,8 +84,8 @@ export default function Home() {
         
   <VisibilitySensor
     partialVisibility={true}
-    minTopValue={height-200}
-    offset={{top:100}}
+    minTopValue={height-250}
+    offset={{top:110}}
     onChange={(isVisible) => {
       isVisible ? setThird(true) : setThird(false)
     }}>
@@ -89,7 +93,8 @@ export default function Home() {
       </CommonScreen>
   </VisibilitySensor>
 
-  <CommonScreen title="/связаться">
+  <CommonScreen title="/заказать проект">
+    <FeedForm/>
   </CommonScreen>
 
   </>
