@@ -1,11 +1,25 @@
-.logo_title
-    font-size: 72px
-    color: #2B6CB0
-    text-transform: uppercase
-    font-weight: 800
-    line-height: 72px
-.logo_subtitle
-    color: #FFFFFF
-    font-size: 44px
-    padding-left: 100px
-    line-height: 44px
+.order_button
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: "Steppe Black"
+    z-index: 10
+    bottom: 50px
+    right: 0px
+    width: 400px
+    height: 80px
+    background: #2D3748
+    backdrop-filter: blur(7.5px)
+    color: #fff
+    font-size: 40px
+    opacity: 1
+    transform: translateY(0)
+    transition: all .5s ease
+    &:hover
+        background: #4A5568
+        cursor: pointer
+    &__hidden
+        transform: translateY(150px)
+        visibility: hidden
+        opacity: 0

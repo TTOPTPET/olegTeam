@@ -1,4 +1,45 @@
 .feedForm
     width: 700px
     margin: 0 auto
-    margin-top: 30px
+    margin-top: 98px
+
+.input-file 
+    position: relative
+    display: inline-block
+    width: 100%
+    margin-bottom: 36px
+
+.input-file span 
+    position: relative
+    display: flex
+    cursor: pointer
+    font-size: 36px
+    align-items: center
+    color: #F7FAFC
+    border-radius: 5px
+    background-color: #2D3748
+    font-family: "Steppe Medium" 
+    line-height: 36px
+    height: 80px
+    width: 100%
+    padding: 21px 16px
+    border: none
+    transition: background-color .3s
+
+.input-file input[type=file] 
+    position: absolute
+    z-index: -1
+    opacity: 0
+    display: block
+    width: 0
+    height: 0
+
+
+/* Focus *
+.input-file input[type=file]:focus + span 
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25)    
+
+
+/* Hover/active *
+.input-file:hover span 
+    background-color: #526281
