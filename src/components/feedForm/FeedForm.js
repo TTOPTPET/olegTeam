@@ -85,14 +85,15 @@ export default function FeedForm() {
         <form className="feedForm" method='POST' onSubmit={handleOnSubmit} encType="multipart/form-data">
             <Input 
                 placeholder='Имя' 
-                w="100%" 
-                h="80px" 
+                w={{xl: "600px", lg: '640px', md: '320px', sm: '300px'}} 
+                h={{xl: "60px", lg: '60px', md: '50px', sm: '50px'}}
                 bg="#2D3748"
                 _placeholder={{ color:"#F7FAFC" }}
-                fontSize="36px"
+                fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}}
+                lineHeight={{xl: "36px", lg: '29px', md: '22px', sm: '19px'}}
                 color="#F7FAFC"
                 fontFamily="Steppe Medium" 
-                mb="36px" 
+                mb="20px" 
                 type="text" 
                 name="Имя" 
                 id="name" 
@@ -101,14 +102,15 @@ export default function FeedForm() {
                 isRequired={true}/>
             <Input 
                 placeholder='Электропочта' 
-                w="100%" 
-                h="80px" 
+                w={{xl: "600px", lg: '640px', md: '320px', sm: '300px'}} 
+                h={{xl: "60px", lg: '60px', md: '50px', sm: '50px'}}
                 bg="#2D3748"
                 _placeholder={{ color:"#F7FAFC" }}
-                fontSize="36px"
+                fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}}
+                lineHeight={{xl: "36px", lg: '29px', md: '22px', sm: '19px'}}
                 color="#F7FAFC"
                 fontFamily="Steppe Medium" 
-                mb="36px" 
+                mb="20px" 
                 type="email" 
                 name="Электропочта" 
                 id="email" 
@@ -118,14 +120,15 @@ export default function FeedForm() {
             <Input 
                 type="tel" 
                 placeholder='Телефон' 
-                w="100%" 
-                h="80px" 
+                w={{xl: "600px", lg: '640px', md: '320px', sm: '300px'}} 
+                h={{xl: "60px", lg: '60px', md: '50px', sm: '50px'}}
                 bg="#2D3748"
                 _placeholder={{ color:"#F7FAFC" }} 
-                fontSize="36px"
+                fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}}
+                lineHeight={{xl: "36px", lg: '29px', md: '22px', sm: '19px'}}
                 color="#F7FAFC"
                 fontFamily="Steppe Medium" 
-                mb="36px" 
+                mb="20px" 
                 name="Телефон" 
                 id="phone" 
                 boxShadow="inset 0px 2px 4px rgba(0, 0, 0, 0.06)"
@@ -134,15 +137,15 @@ export default function FeedForm() {
 
             <Textarea 
                 placeholder='Пара слов о проекте' 
-                w="100%" 
+                w={{xl: "600px", lg: '640px', md: '320px', sm: '300px'}}  
                 bg="#2D3748"
                 _placeholder={{ color:"#F7FAFC" }}
-                fontSize="36px"
+                fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}}
+                lineHeight={{xl: "36px", lg: '29px', md: '22px', sm: '19px'}}
                 color="#F7FAFC"
                 fontFamily="Steppe Medium" 
-                mb="36px" 
-                id="textarea" 
-                h="120px" 
+                mb="20px" 
+                id="textarea"
                 type="text"     
                 name="Сообщение" 
                 boxShadow="inset 0px 2px 4px rgba(0, 0, 0, 0.06)"
@@ -158,12 +161,12 @@ export default function FeedForm() {
 
             <Button 
                 colorScheme='blue' 
-                w="100%" 
-                h="80px" 
+                w={{xl: "600px", lg: '640px', md: '320px', sm: '300px'}} 
+                h={{xl: "60px", lg: '60px', md: '50px', sm: '50px'}}
                 bg="#2B6CB0" 
-                fontSize="32px" 
+                fontSize={{xl: "32px", lg: '24px', md: '18px', sm: '16px'}}
                 type="submit"
-                fontFamily="Steppe Medium"
+                fontFamily="Steppe Light"
                 onClick={onOpen}
                 >
                     Отправить {`>`}
@@ -172,17 +175,17 @@ export default function FeedForm() {
 
         <Modal isOpen={isOpen} onClose={onClose} closeOnEsc="true" motionPreset="slideInBottom" isCentered="true" >
 
-            <ModalOverlay/>
+            <ModalOverlay bg="rgba(0, 0, 0, 0.56)"/>
 
-            <ModalContent p="126px 100px 106px" h="630px" minW="1024px" bg="#2D3748">
+            <ModalContent p={{xl: "100px 84px", lg: '82px 60px', md: '75px 20px', sm: '75px 20px'}} h={{xl: "600px", lg: '460px', md: '420px', sm: '420px'}} minW={{xl: "768px", lg: '640px'}} w={{md: '320px', sm: '300px'}} bg="#2D3748">
 
-            <ModalHeader p="0px" color="#F7FAFC" fontSize="56px" lineHeight="56px" fontFamily="Steppe Black" letterSpacing="0.01em">Месседж отправлен!</ModalHeader>
+            <ModalHeader p="0px" color="#F7FAFC" fontSize={{xl: "42px", lg: '40px', md: '24px', sm: '22px'}} lineHeight="100%" fontFamily="Steppe Black" letterSpacing="0.01em">Отлично!</ModalHeader>
 
-            <ModalBody p="0" mt="82px" color="#F7FAFC" fontFamily="Steppe Regular" fontSize="40px" lineHeight="48px" letterSpacing="0.01em">
+            <ModalBody p="0" mt={{xl: "60px", lg: '40px', md: '35px', sm: '35px'}} color="#F7FAFC" fontFamily="Steppe Regular" fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}} lineHeight={{xl: "36px", lg: '29px', md: '22px', sm: '19px'}} letterSpacing="0.01em">
             Ваша заявка успешно отправлена, с Вами скоро свяжутся!
             </ModalBody>
 
-            <Button colorScheme='blue' h="80px" bg="blue.600" color="#F7FAFC" fontSize="32px" fontFamily="Steppe Medium" onClick={onClose}>
+            <Button colorScheme='blue' h={{xl: "60px", lg: '60px', md: '50px', sm: '50px'}} bg="blue.600" color="#F7FAFC" fontSize={{xl: "30px", lg: '24px', md: '18px', sm: '16px'}} fontFamily="Steppe Light" onClick={onClose}>
                 Хорошая работа, Олег!
             </Button>
 

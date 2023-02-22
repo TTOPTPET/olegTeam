@@ -14,7 +14,7 @@ export default function ProjectsCardList({data}) {
     })
 
     return (
-        <Box display="flex" flexDir="column" justifyContent="center" alignItems="center" mt="62px">
+        <Box display="flex" flexDir="column" justifyContent="center" alignItems="center">
             {elements}
         </Box>
     )

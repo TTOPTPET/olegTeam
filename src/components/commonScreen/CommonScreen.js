@@ -3,8 +3,8 @@ import { Box } from '@chakra-ui/react'
 
 export default function CommonScreen(props) {  
   return (
-    <Box  minH="100vh" w='1024px' m="0 auto" pt="150px" pl="66px" pr="66px" pb="51px" name={props.name}>
-      <Box lineHeight="72px" fontWeight="700" fontSize="72px" color="#F7FAFC" textAlign="center">{props.title}</Box>
+    <Box w={{xl: "768px", lg: '640px', md: '320px', sm: '300px'}} m="0 auto" pt={{xl: "170px", lg: '120px', md: '110px', sm: '110px'}} name={props.name}>
+      <Box lineHeight="100%" fontWeight="700" fontSize={{xl: "54px", lg: '44px', md: '30px', sm: '30px'}} color="#F7FAFC" textAlign="center" mb={{xl: "80px", lg: '60px', md: '46px', sm: '46px'}}>{props.title}</Box>
       {props.children}
     </Box>
   )
