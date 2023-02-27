@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 import { Text, ChakraProvider } from "@chakra-ui/react"
 
@@ -51,8 +51,8 @@ const about = <><Text display="inline" fontFamily="Steppe Bold">OLEG Team</Text
 
 const projects = [
   {title: "Booking", descr: `Онлайн-сервис для автоматизации записи на события. Создавай свои ивенты и записывайся на события, созданные другими пользователями`, link: "olegbooking.ru", adress: "https://www.olegbooking.ru/", image: laptop, right:["-250px", '-60px', '-45px', '0px'], bottom:["20px", '0px', '15px', '15px'], width:["550px", '440px', '300px', '260px']},
-  {title: "Printer", descr: "Система дистанционной печати с контролем доступа. Отслеживай использование принтера, отправляй файлы дистанционно, получай копии по прибытии", link: "olegbooking.ru", adress: "https://www.olegbooking.ru/", image: ipad, left:["-230px", '-120px', '-70px', '-45px'], bottom:["-90px", '-60px', '-45px', '-55px'], side:"right", width:["470px", '362px', '250px', '266px']},
-  {title: "Экспорт расписаний", descr: "Расписание университета в любом календаре. Используй без интернета и сайта университета. Практично и удобно", link: "olegbooking.ru", adress: "https://www.olegbooking.ru/", image: iphone, right:["-150px", '-90px', '-35px', '-15px'], bottom:["-60px", '-40px', '-25px', '-10px'], width:["260px", '220px', '150px', '140px']}
+  {title: "Printer", descr: "Система дистанционной печати с контролем доступа. Отслеживай использование принтера, отправляй файлы дистанционно, получай копии по прибытии", link: "olegprinter.ru", adress: null, image: ipad, left:["-230px", '-120px', '-70px', '-45px'], bottom:["-90px", '-60px', '-45px', '-55px'], side:"right", width:["470px", '362px', '250px', '266px']},
+  {title: "Экспорт расписаний", descr: "Расписание университета в любом календаре. Используй без интернета и сайта университета. Практично и удобно", link: "olegtimetable.ru", adress: "https://maicalendar.github.io/#/", image: iphone, right:["-150px", '-90px', '-35px', '-15px'], bottom:["-60px", '-40px', '-25px', '-10px'], width:["260px", '220px', '150px', '140px']}
 ]
 
 const competencies = [
@@ -91,8 +91,10 @@ export default function Home() {
     {title: "Компетенции", name: "competencies"},
     {title: "Команда", name: "teams"}  
   ]
- 
-  autosize(document.querySelector("textarea"))
+
+  useEffect(() => {
+    typeof document !== "undefined" && autosize(document.querySelector("textarea"))
+  }, [])
 
   return (
   <>

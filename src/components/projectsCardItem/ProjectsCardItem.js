@@ -6,8 +6,6 @@ export default function ProjectsCardsList(props) {
 
     const {title, descr, adress, link, image, left, right, bottom, side, width} = props;
 
-    console.log(width[0]);
-
     return (
         <Box bg="#2D3748" mb="20px" _last={{ mb: 0 }} w="100%" h={{xl: "520px", lg: '500px', md: '420px', sm: '420px'}} p={{xl: "80px 84px 94px", lg: '80px 51px 112px', md: '43px 20px 156px', sm: '43px 25px 159px'}} display="flex" flexDir="column" pos="relative">
             <Box fontSize={{xl: "42px", lg: '40px', md: '24px', sm: '22px'}} color="#F7FAFC" lineHeight="100%" fontFamily="Steppe Black" textAlign={side ? 'right' : 'left'}>{title}</Box>

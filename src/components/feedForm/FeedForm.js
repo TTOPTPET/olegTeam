@@ -52,7 +52,7 @@ export default function FeedForm() {
         setServerState({ submitting: true });
         axios({
             method: "post",
-            url: "https://getform.io/f/d18d2adc-2e31-4ad7-a661-6219adb46764",
+            url: "https://getform.io/f/bcfa04bc-cad5-4c75-85ff-54d688401d79",
             data: new FormData(form)
         })
             .then(r => {
@@ -167,7 +167,6 @@ export default function FeedForm() {
                 fontSize={{xl: "32px", lg: '24px', md: '18px', sm: '16px'}}
                 type="submit"
                 fontFamily="Steppe Light"
-                onClick={onOpen}
                 >
                     Отправить {`>`}
             </Button>

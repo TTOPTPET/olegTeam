@@ -1,21 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Box, Image } from '@chakra-ui/react'
 import { Link } from "react-scroll";
 
 import burger from "../../images/burger.svg"
-import close from '../../images/cancel.png'
+import close from '../../images/cancel.svg'
 
 export default function BurgerPopup(props) {
 
     const [active, setActive] = useState(false)
 
-    const {name} = props
-
-    window.addEventListener('scroll', function() {
-        if (active && window.scrollY > -1) {
-            setActive(false)
-        }
-      });
+    useEffect(() => {
+        window.addEventListener('scroll', function() {
+            if (active && window.scrollY > -1) {
+                setActive(false)
+            }
+        });
+    }, [active])
+    
 
     return (
         <>
